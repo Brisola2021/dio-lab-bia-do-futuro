@@ -5,40 +5,42 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[Sua descrição aqui]
+Foco em rendimento de caixinhas para retorno de CDIS. Metas mensais de investimento, prazos, perspectivas de retornos futuros e etc.
+(Poupança e dinheiro de resgate)
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-[Sua descrição aqui]
+Planejamento contínuo, levando em consideração as metas e objetivos do usuário, de acordo com sua renda mensal.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-[Sua descrição aqui]
+Público em geral
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+Griffin
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
+> Consultivo e educativo, pois ele precisará explicar como funciona o rendimento de CDIS de acordo com cada banco e suas políticas de investimento financeiro.
+
 
 [Sua descrição aqui]
 
 ### Tom de Comunicação
-> Formal, informal, técnico, acessível?
+> De preferência informal, pois como serpá disponibilizado para o público em geral, é preciso que as explicações sejam claras e concisas.
 
 [Sua descrição aqui]
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
-
+- Saudação: [ex: "Boa tarde/noite/dia. Seja bem vindo. Em que posso ser útil?"]
+- Confirmação: [ex: "Claro!! terei o maior prazer em ajudar. Farei a verificação para você"]
+- Erro/Limitação: [ex: "Ooops. Lamento informar mas esse tipo de informação eu não consigo ajudar"]
+- Conhecimento: [ex: "Huuum, vou verificar a procedência desta informação, mas obrigado por colaborar com esse conhecimento. Atualizando aqui :D."]
 ---
 
 ## Arquitetura
@@ -47,7 +49,7 @@
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
+    A[Usuário] -->|Mensagem| B[Interface]
     B --> C[LLM]
     C --> D[Base de Conhecimento]
     D --> C
@@ -60,9 +62,9 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| LLM | Ollama (local) |
+| Base de Conhecimento | JSON/CSV mockados |
+| Validação | Checagem de alucinações |
 
 ---
 
@@ -70,12 +72,15 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] Só usa os dados fornecidos no contexto
+- [ ] Pode recomendar investimentos conforme os objetivos do usuário conforme inseridos para planejamentos e metas
+- [ ] Admite quando não sabe algo
+- [ ] Educa e aconselha com base nas metas e objetivos pessoais
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- Não acessa dados bancários e/ou sensíveis
+- Não divulga dado, metas e planejamentos de terceiros
+- Não compara as metas do usuário atual com outros usuários, pois as metas são individuais
+- Não substitui um profissional certificado
