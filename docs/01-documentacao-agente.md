@@ -32,7 +32,7 @@ Griffin
 [Sua descrição aqui]
 
 ### Tom de Comunicação
-> De preferência informal, pois como serpá disponibilizado para o público em geral, é preciso que as explicações sejam claras e concisas.
+> De preferência informal, pois como será disponibilizado para o público em geral, é preciso que as explicações sejam claras e concisas.
 
 [Sua descrição aqui]
 
